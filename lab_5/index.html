@@ -277,19 +277,23 @@
       { "name": "Yemen", "code": "YE" },
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
-    ];
+    ]
+    sessionStorage.setItem("country_list", JSON.stringify(countries));
+    
+    function mycountries(){
+      const str = sessionStorage.getItem("country_list");
+      const name = JSON.parse(str);
+      var capital = [];
+      
+      for (let i=0; i< 50;i++){ 
+        capital.push(name[Math.floor(Math.random() * countries.length)]);
 
-    let countries_json = JSON.stringify(countries)
-
-    function replaceList() {
-      let oldlist = document.getElementsByClassName("instructions");
-      for(i=0; i < countries.length; i+=1) {
-          oldlist[0].innerHTML = countries_json
-      };
-
+      }
+      console.log(capital);
+      return capital;
     }
-   
 
+   
   </script>
 </body>
 
