@@ -11,7 +11,8 @@
     <div class="wrapper">
       <div class="header">Test JSON page</div>
       <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
-      <button class="button" onclick="console.log('You haven\'t written a function yet!');">Click me to replace list entries</button>
+      <button class="button" onclick="myCountries()">Click me to replace list entries</button> 
+      
       <div class="content">
         <ul class="instructions">
           <li>Delete and re-clone the class repository</li>
@@ -278,19 +279,34 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
-    sessionStorage.setItem("country_list", JSON.stringify(countries));
     
-    function mycountries(){
-      const str = sessionStorage.getItem("country_list");
-      const name = JSON.parse(str);
-      var capital = [];
-      
-      for (let i=0; i< 50;i++){ 
-        capital.push(name[Math.floor(Math.random() * countries.length)]);
+    sessionStorage.setItem("country_list", JSON.stringify(countries));
 
+  
+   
+    
+    function myCountries()  {
+      const str = sessionStorage.getItem("country_list");
+      const file = JSON.parse(str);
+      const element = document.querySelector(".instructions");
+      element.innerHTML = ' ';
+      const nameArray = file.map((i) => i.file);
+      var oList = document.createElement("OL");
+      element.appendChild(oList);
+      const names = [ ]
+      
+      for (let i =0 ; i < 50;i+= 1) { 
+        names[i] = file[i].name;
+        oList.innerHTML += '<li>' + names[i] + '</li>'
+        
+      console.log(oList)
+      
+      
       }
-      console.log(capital);
-      return capital;
+
+        
+      
+      
     }
 
    
