@@ -10,7 +10,7 @@
   <div class="container">
     <div class="wrapper">
       <div class="header">Test AJAX page</div>
-      <button class="button" onclick="loadData()">Load Some JSON</button>
+      <button class="button" onclick="mycounries()">Load Some JSON</button>
       <div class="content"></div>
       <div class="footer"></div>
     </div>
@@ -19,14 +19,14 @@
     function getRandomIntInclusive(min,max) {
       min = Math.ceil(min);
       max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min + 1)) + min;
+      return Math.floor(Math.random() * (max-min+1)) + min;
 
     }
-    function loadData() {
+    function mycounries() {
       fetch('ajax_sample.json')
         .then(res => res.json())
         .then(name => {
-          for (let i = 0; i<15; i += 1) {
+          for (let i=0; i<15; i+=1) {
             country = name[getRandomIntInclusive(0,242)]
             document.querySelector(".content").innerHTML += "<li>" + country.name
              "</li>"
