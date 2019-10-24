@@ -28,7 +28,7 @@
          str = "<ol>"
           for (let i = 0; i<15; i++) {
                 index = getRndInteger(0, name.length -1);
-                str += "<li>" + name[country] + "</li>";
+                str += "<li>" + data[index] + "</li>";
           }
           str += "</ol";
            document.querySelector(".content").innerHTML = str;
