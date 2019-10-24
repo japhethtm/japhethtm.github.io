@@ -25,13 +25,20 @@
     function loadData() {
       fetch('ajax_sample.json')
         .then(res => res.json())
+        .then(name => name.map(c => c.name))
         .then(name => {
-          for (let i = 0; i<15; i += 1) {
-            country = name[getRandomIntInclusive(0,242)]
-            document.querySelector(".content").innerHTML += "<li>" + country.name
-             "</li>"
+         str = "<ol>"
+          for (let i = 0; i<15; i++) {
+            country = getRndInteger(0, name.length -1);
+            str += "<li>" + name[country] + "</li>";
           }
-        })
+          str += "</ol";
+           document.querySelector(".content").innerHTML = str;
+        });
+
+             
+          
+        
     }
     
 
