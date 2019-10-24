@@ -17,19 +17,18 @@
   </div>
   <script>
     function getRndInteger(min,max) {
-      
-      return Math.floor(Math.random() * (max - min + 1)) + min;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
 
     }
     function loadData() {
       fetch('ajax_sample.json')
         .then(res => res.json())
-        .then(name => name.map(c => c.name))
-        .then(name => {
+        .then(data => data.map(c => c.name))
+        .then(data => {
          str = "<ol>"
           for (let i = 0; i<15; i++) {
-            country = getRndInteger(0, name.length -1);
-            str += "<li>" + name[country] + "</li>";
+                index = getRndInteger(0, name.length -1);
+                str += "<li>" + name[country] + "</li>";
           }
           str += "</ol";
            document.querySelector(".content").innerHTML = str;
