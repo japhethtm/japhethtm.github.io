@@ -24,18 +24,18 @@
         
         .then(res => {
           console.log(res);
-          let htmlTarget = document.querySelector(".content");
-          htmlTarget.innerHTML = "";
-          let el1 = document.createElement("ol");
+          let mycourse = document.querySelector(".content");
+          mycourse.innerHTML = "";
+          let = document.createElement("ol");
           el1.className= "list";
-          htmlTarget.appendChild(el1);
+          mycourse.appendChild(el1);
 
           
           
           for (let x=0; x < res.data.length; x++) {
                   let el = document.createElement("li");
                   el.innerText = res.data[x];
-                  htmlTarget.appendChild(el);
+                  mycourse.appendChild(el);
           };
           return res;
         })
