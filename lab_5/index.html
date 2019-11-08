@@ -291,15 +291,15 @@
       const element = document.querySelector(".instructions");
       element.innerHTML = ' ';
       const nameArray = file.map((i) => i.file);
-      var oList = document.createElement("OL");
-      element.appendChild(oList);
+      var oList = document.createElement("CL");
+      element.appendChild(cList);
       const names = [ ]
       
       for (let i =0 ; i < 50;i+= 1) { 
         names[i] = file[i].name;
-        oList.innerHTML += '<li>' + names[i] + '</li>'
+        cList.innerHTML += '<li>' + names[i] + '</li>'
         
-      console.log(oList)
+      console.log(cList)
       
       
       }

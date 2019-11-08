@@ -17,13 +17,15 @@
   </div>
   <script>
     function loadData() {
-      fetch('https://api.umd.io/v0/bus/routeshttps://api.umd.io/v0/bus/routes')
+      fetch('https://api.umd.io/v0/bus/routes')
         .then(res => res.json())
         .then(res => {
+          
           // you can now work in this area
-
+         route = { }
           return res;
         })
+        .then(res => res.map(d => d.name))
         .then(data => document.querySelector(".content").innerText = data);
     }
   </script>
