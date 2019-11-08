@@ -46,13 +46,13 @@ app.get('/api', (req, res) => {
   fetch(baseURL)
     .then((r) => r.json())
     .then((data) => {
-      const courseid = data.filter(c => c.dept_id === "INST");
-      return courseid
+      const courseidArray = data.filter(c => c.dept_id === "INST");
+      return courseidArray
     })
     .then(data => {
-      const coursetitle = data.map(c => `${c.course_id} : ${c.name}`);
-      console.log(coursetitle);
-      res.send( {data: coursetitle });
+      const coursetitleArray = data.map(c => `${c.course_id} : ${c.name}`);
+      console.log(coursetitleArray);
+      res.send( {data: coursetitleArray });
 
     })
       
