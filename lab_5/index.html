@@ -279,7 +279,7 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
-    
+    console.log("List of Countries in the World", countries);
     sessionStorage.setItem("country_list", JSON.stringify(countries));
 
     function shuffle(array) {
@@ -291,18 +291,19 @@
     function myCountries()  {
       const str = sessionStorage.getItem("country_list");
       const file = JSON.parse(str);
-      const element = document.querySelector(".instructions");
+      const element = document.querySelector(".instructions")
       element.innerHTML = ' ';
       const nameArray = file.map((i) => i.file);
-      var oList = document.createElement("CL");
+      var cList = document.createElement("CL");
       element.appendChild(cList);
       const names = [ ]
       
-      for (let i =0 ; i < 50;i+= 1) { 
+      for (let i =0 ; i < 50; i+= 1) { 
         names[i] = file[i].name;
         cList.innerHTML += '<li>' + names[i] + '</li>'
+      shuffle(file)
         
-      console.log(cList)
+      
       
       
       }
