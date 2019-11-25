@@ -282,7 +282,10 @@
     
     sessionStorage.setItem("country_list", JSON.stringify(countries));
 
-  
+    function shuffle(array) {
+      array.sort(() => Math.random() - 0.5);
+      return array
+    }
    
     
     function myCountries()  {
