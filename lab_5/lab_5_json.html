@@ -11,9 +11,8 @@
     <div class="wrapper">
       <div class="header">Test JSON page</div>
       <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
-      <button class="button" onclick=console.log>Click me to replace list 
-        entries</button> 
-      
+      <button class="button" onclick="console.log('You haven\'t written a function yet!');">Click me to replace list
+        entries</button>
       <div class="content">
         <ul class="instructions">
           <li>Delete and re-clone the class repository</li>
@@ -280,26 +279,13 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
-  
-    sessionStorage.setItem("country_list", JSON.stringify(countries));
-
-    
-    
-   
-    
-    function myCountries()  {
-    
+    sessionStorage.setItem("code", JSON.stringify(countries));
+    function mycountries(){
+      
     }
-      
-    const doc = sessionStorage.getItem("country_list");
-    const str= JSON.parse(doc);
-    console.log(str.name);
-      
-      
-      
-      
-
-   
+    const cod = sessionStorage.getItem("code");
+    const json = JSON.parse(cod);
+    console.log(json.name);
   </script>
 </body>
 
