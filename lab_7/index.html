@@ -22,11 +22,16 @@
         .then(res => {
           
           // you can now work in this area
-         route = { }
-          return res;
+         console.log(res)
+         return res;
+        }) . then (res =>{
+          for(var i = 0; i<res.length; i++)
+          list.innerHTML+='<li>' + res [i].title + '<li>'
+      return res  
         })
-        .then(res => res.map(d => d.name))
-        .then(data => document.querySelector(".content").innerText = data);
+        
+        .then(data => document.querySelector(".header").innerText = "UMD Bus Route " + data[4].title);
+
     }
   </script>
 </body>
